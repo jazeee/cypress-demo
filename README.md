@@ -2,16 +2,15 @@
 
 ### Install
 ```
-npm install
+yarn install
 ```
 
 ### Run
 ```
 # Run Specs using GUI
-npx cypress open
+yarn cypress:open
 # Run all specs in headless env.
-npx cypress run 
+yarn cypress:run
 # Run a single spec:
-npx cypress run --spec cypress/integration/1-tests/google.spec.js
+yarn cypress:run --spec cypress/integration/1-tests/google.spec.js
 ```
-
