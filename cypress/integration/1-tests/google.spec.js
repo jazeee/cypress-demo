@@ -6,11 +6,13 @@ context('Google Search', () => {
     cy.server();
     cy.get("input.gLFyf").as("input-field");
 
-    cy.route("GET", /complete\/search?.*q=Jaz Singh/)
+    const searchTerm = 'Jaz Singh Software';
+
+    cy.route("GET", new RegExp(`/complete/search?.*q=${searchTerm}`))
       .as("search-me");
     cy.get("@input-field")
-      .type("Jaz Singh")
-      .should("have.value", "Jaz Singh");
+      .type(searchTerm)
+      .should("have.value", searchTerm);
     cy.get("body").click("left");
 
     cy.get('.FPdoLc > center > [value="Google Search"]').click();
